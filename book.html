@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Book the bar | Good Shape (example site)</title>
+<meta name="description" content="Pick your stools at the twelve-seat pasta bar. Example site by Local Form: nothing is really booked.">
+<meta name="theme-color" content="#1f43ad">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Book the bar | Good Shape (example site)">
+<meta property="og:description" content="Pick your stools at the twelve-seat pasta bar. Example site by Local Form: nothing is really booked.">
+<meta property="og:image" content="https://preview.localform.online/good-shape-preview/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://preview.localform.online/good-shape-preview/book">
+<link rel="canonical" href="https://preview.localform.online/good-shape-preview/book">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="preload" href="assets/abril-fatface-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/hanken-grotesk-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="styles.css?v=2">
+<script type="module" src="book.js?v=2"></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <a class="mark" href="index.html" aria-label="Good Shape home"><b>Good Shape</b><span>fresh pasta bar</span></a>
+  <nav id="nav" aria-label="Main"><a href="index.html#dies">Shapes</a><a href="index.html#sauce">Sauces</a><a href="menu.html">Menu</a><a href="book.html" aria-current="page">Book the bar</a><a href="index.html#visit">Hours</a></nav>
+  <a class="btn small" href="order.html">Order pickup</a>
+  <button class="menu-toggle" aria-expanded="false" aria-controls="nav" aria-label="Open menu"><i></i><i></i></button>
+</header>
+
+<main id="main">
+<div id="book-main">
+<section class="page-head"><div class="wrap">
+  <p class="eyebrow">Example site &middot; book the bar</p>
+  <h1>Twelve stools.<br>Pick yours.</h1>
+  <p class="sub">The counter wraps round the pasta station. Sit down, order a glass, and watch yours get made and cooked.</p>
+  <a class="btn" href="#book-form">Pick my stools <span aria-hidden="true">&darr;</span></a>
+</div></section>
+<section class="sec"><div class="wrap cols">
+  <form id="book-form" novalidate>
+    <div class="step"><h2><span class="mono">01</span>When</h2><p class="note">Tuesday to Saturday. Each seating is about ninety minutes.</p>
+      <div class="fields"><div class="field"><label for="date">Date</label><input id="date" name="date" type="date" required></div>
+      <div class="field"><span class="lab" id="size-lab">How many</span><span class="stepper" role="group" aria-labelledby="size-lab"><button type="button" id="fewer" aria-label="One fewer">&minus;</button><output id="size" aria-live="polite">2</output><button type="button" id="more" aria-label="One more">+</button></span><small>Up to four at the bar. More? Call us.</small></div></div>
+      <div class="seatings" role="radiogroup" aria-label="Seating">
+        <label class="chip"><input type="radio" name="seating" value="5:30 pm"><span>5:30 pm</span></label>
+        <label class="chip"><input type="radio" name="seating" value="7:15 pm" checked><span>7:15 pm</span></label>
+        <label class="chip"><input type="radio" name="seating" value="9:00 pm"><span>9:00 pm</span></label>
+      </div>
+      <p class="err" id="closed" hidden>The bar is closed that day. It&rsquo;s open Tuesday to Saturday.</p>
+    </div>
+    <div class="step"><h2><span class="mono">02</span>Your stools</h2><p class="note" id="seat-help" aria-live="polite"></p>
+      <div class="counter" id="seats"><div class="kitchen"><span><b>Pasta station</b>die &middot; pot &middot; pass</span></div><button class="seat c1 r1" type="button" data-n="1">1</button><button class="seat c1 r2" type="button" data-n="2">2</button><button class="seat c1 r3" type="button" data-n="3">3</button><button class="seat c2 r4" type="button" data-n="4">4</button><button class="seat c3 r4" type="button" data-n="5">5</button><button class="seat c4 r4" type="button" data-n="6">6</button><button class="seat c5 r4" type="button" data-n="7">7</button><button class="seat c6 r4" type="button" data-n="8">8</button><button class="seat c7 r4" type="button" data-n="9">9</button><button class="seat c8 r3" type="button" data-n="10">10</button><button class="seat c8 r2" type="button" data-n="11">11</button><button class="seat c8 r1" type="button" data-n="12">12</button></div>
+      <p class="legend"><span><i></i>Free</span><span><i class="y"></i>Yours</span><span><i class="t"></i>Taken (example)</span></p>
+    </div>
+    <div class="step"><h2><span class="mono">03</span>You</h2>
+      <div class="fields">
+        <div class="field"><label for="name">Name</label><input id="name" name="name" type="text" autocomplete="name" required></div>
+        <div class="field"><label for="phone">Mobile number</label><input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required><small>A made-up number is fine here.</small></div>
+        <div class="field full"><label for="notes">Allergies or a birthday? (optional)</label><textarea id="notes" name="notes"></textarea></div>
+      </div>
+      <p class="err" id="book-err" role="alert" hidden></p>
+    </div>
+    <button class="btn red" type="submit">Hold my stools</button>
+    <p class="key">Example only. Nothing is sent and no card is taken.</p>
+  </form>
+  <aside class="ticket" aria-label="About the bar">
+    <h2>At the bar</h2>
+    <dl>
+      <div class="l"><dt>Pasta plates</dt><dd>$16 to $19</dd></div>
+      <div class="l"><dt>Seatings</dt><dd>5:30 &middot; 7:15 &middot; 9:00</dd></div>
+      <div class="l"><dt>Nights</dt><dd>Tue to Sat</dd></div>
+    </dl>
+    <p class="fineprint">No deposit. If plans change, a text is enough.</p>
+    <a class="btn" href="menu.html">See the menu</a>
+  </aside>
+</div></section>
+</div>
+<section class="done" id="book-done" hidden><div class="wrap">
+  <p class="eyebrow">Stools held &middot; example</p>
+  <h2 id="done-title" tabindex="-1" class="mt16">See you soon.</h2>
+  <dl class="card" id="done-lines"></dl>
+  <p class="honest">Example site: nothing was sent and no stools are really held. On a real site the bar confirms by text.</p>
+  <div class="cta-row"><a class="btn blue" id="gcal" href="#" target="_blank" rel="noopener">Add to Google Calendar</a><button class="btn line" type="button" id="again">Change the booking</button></div>
+</div></section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div><p class="big">Good<br>Shape</p></div>
+      <div><h4>Eat</h4><ul><li><a href="order.html">Order pickup</a></li><li><a href="book.html">Book the bar</a></li><li><a href="menu.html">Menu</a></li></ul></div>
+      <div><h4>Find</h4><ul><li><a href="index.html#visit">Hours and address</a></li><li><a href="tel:+19735550164">(973) 555-0164</a></li><li><a href="index.html#dies">Today&rsquo;s shapes</a></li></ul></div>
+    </div>
+    <p class="fine"><span>Good Shape is a fictional pasta bar. Nothing here is ordered, booked or charged.</span><span>Pictures made in code. Bread photo: Geraud pfeiffer, Pexels.</span><span>Example site by <a href="https://localform.online">Local Form</a></span></p>
+  </div>
+</footer>
+<script>/* lf-open: counts a tagged preview link being opened (?r=). No cookies. Local Form */(function(){try{var r=new URLSearchParams(location.search).get('r');if(!r||!navigator.sendBeacon||sessionStorage.getItem('lf-open'))return;sessionStorage.setItem('lf-open','1');navigator.sendBeacon('https://localform.online/api/open',JSON.stringify({r:r,s:location.pathname.split('/')[1]||location.hostname,d:matchMedia('(pointer:coarse)').matches?'phone':'desktop'}))}catch(e){}})();</script>
+</body>
+</html>
